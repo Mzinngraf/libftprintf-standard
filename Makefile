@@ -16,7 +16,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 
-SRC = ft_printf.c ft_printhex.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_puthex.c ft_puthexupper.c
+SRC = ft_printf.c ft_printptr.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_puthex.c ft_puthexupper.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)

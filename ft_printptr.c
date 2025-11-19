@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexupper.c                                        :+:      :+:    :+:   */
+/*   ft_printhex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmourao- <mmourao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,20 +11,21 @@
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
-int	ft_puthexupper(unsigned long n)
+int ft_printptr(void *ptr)
 {
-	char *hex = "0123456789abcdef";
-	int count;
-	count = 0;
+    int count;
 
-	if (n >= 16)
-		count += ft_puthex(n / 16);
-	count += ft_putchar(hex[n % 16] -32);
-	return count;
+    count = 0;
+    if (ptr == NULL)
+    {
+        count += ft_putstr("(nil)");
+        return (count);
+    }
+    count += ft_putstr("0x");
+    count += ft_puthex((unsigned long)ptr);
+    return (count);
 }
-/*  int main()
+/* int main()
 {
-    ft_puthex(255);
-}
- */
+    ft_printhex((void*)255);
+} */
