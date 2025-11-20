@@ -62,7 +62,7 @@ int	ft_printf(const char *fmt, ...)
 	va_end(args);
 	return (count);
 }
-/* 
+
 int	main(void)
 {
 	int	a, b;
@@ -87,5 +87,9 @@ int	main(void)
 	b = printf("Hex: %x", 255);
 	printf("\n%d %d\n", a, b);
 
+	a = ft_printf("Hex: %X", 255);
+	b = printf("Hex: %X", 255);
+	printf("\n%d %d\n", a, b);	
+
 	return (0);
-} */
+} 

@@ -12,15 +12,14 @@
 
 #include "libftprintf.h"
 
-int	ft_puthexupper(unsigned long n)
+int ft_puthexupper(unsigned long n)
 {
-	char *hex = "0123456789abcdef";
-	int count;
-	count = 0;
+	char *hex = "0123456789ABCDEF";
+	int count = 0;
 
 	if (n >= 16)
-		count += ft_puthex(n / 16);
-	count += ft_putchar(hex[n % 16] -32);
+		count += ft_puthexupper(n / 16);
+	count += ft_putchar(hex[n % 16]);
 	return count;
 }
 /*  int main()
